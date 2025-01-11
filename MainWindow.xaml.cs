@@ -20,5 +20,15 @@ namespace Names
         {
             InitializeComponent();
         }
+
+        // Generate the event handler code. Right-click on ButtonAddName_Click and select Go To Definition.
+        private void ButtonAddName_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtName.Text) && !lstNames.Items.Contains(txtName.Text))
+            {
+                lstNames.Items.Add(txtName.Text);
+                txtName.Clear();
+            }
+        }
     }
 }
